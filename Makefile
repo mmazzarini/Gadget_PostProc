@@ -7,10 +7,10 @@ $(info $)
 $(info $   +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  + $)
 $(info $)
 $(info $)
-$(info $    Superbox_Postproc GNU Makefile by M. Mazzarini (ARI, Heidelberg, 2017)     $)
+$(info $    Gadget_PostProc GNU Makefile by M. Mazzarini (ARI, Heidelberg, 2017)     $)
 $(info $)
 $(info $)
-$(info $                	Thanks to M. Arca Sedda				     $) 					     	
+$(info $          Thanks to Manuel Arca Sedda for helping write the Makefile	     $) 					     	
 $(info $)
 $(info $)
 $(info $   +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  + $)
@@ -22,14 +22,9 @@ $(info $)
 CC = g++ -std=c++11
 FFLAGS += -O3 -W -Wall 
 
-EXEC = GadgetPostProc_noSPH_geom.x
-#EXEC = 
-#EXEC = GadgetPostProc_cylinder.x
-#EXEC = GadgetPostProc_cylinder_noSigma.x
+EXEC = GadgetPostProc.x
  
 PATH_FILE = $(EXEC)
-
-#writeReadh5.o : writeReadh5.cpp 
 
 SOURCE += functions_utilities_Matteo.cpp Hdf5_particles_calculate_density.cpp functions_on_mass_distribution.cpp functions_make_arrays.cpp functions_Hdf5_writeHDF5.cpp functions_readHDF5.cpp readDensities.cpp Gadget_postProc_H5.cpp
 
@@ -41,9 +36,6 @@ INCL += $(HDF5_INCL)
 LIBS += $(HDF5LIBS)
 
 LIBS +=  -lhdf5 -lhdf5_cpp -lz
-
-#INCL := $(INCL)
-#LIBS := $(LIBS)
 
 build: $(EXEC)
 
