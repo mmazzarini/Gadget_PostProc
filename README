@@ -22,7 +22,7 @@ The code written for compilation and execution on Unix-based shells and terminal
 
 To create the executable, go on the terminal and:
 
-1 - run $./Gadget_PostProc_Makefile_Setup.sh, modifying inside it the path to the HDF5 modules;
+1 - run $./Gadget_PostProc_Makefile_setup.sh, modifying inside it the path to the HDF5 modules;
 2 - run $make; an execuable with a name corresponding to the one of the variable $EXEC will be created;
 3 - run your executable as ./name_of_executable.
 
