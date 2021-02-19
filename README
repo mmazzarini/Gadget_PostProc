@@ -1,0 +1,15 @@
+Gadget_PostProc 
+
+Developed by M.Mazzarini
+
+This code is done to analyse astrophysical simulation outputs from Gadget 2 (Springel, V. 2005 MNRAS, 364, 1105) and Gadget-4 (Springel, V., Pakmor, R., Zier
+O., Reinecke, M., https://arxiv.org/abs/2010.03567) 
+
+The code is in C++ and is composite of more source files. 
+This repository contains a Makefile.
+
+To create the executable, access the Makefile and make sure the required libraries and their paths are correctly linked. 
+
+Requirements:
+- HDF5 library
+- C++ standard
