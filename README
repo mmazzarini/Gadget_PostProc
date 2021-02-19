@@ -1,15 +1,39 @@
 Gadget_PostProc 
 
-Developed by M.Mazzarini
+Developed (2017-18) by M. Mazzarini @ARI, Heidelberg, Germany
 
-This code is done to analyse astrophysical simulation outputs from Gadget 2 (Springel, V. 2005 MNRAS, 364, 1105) and Gadget-4 (Springel, V., Pakmor, R., Zier
+This code is done to analyse astrophysical N-body simulation outputs from Gadget 2 (Springel, V. 2005 MNRAS, 364, 1105) and Gadget-4 (Springel, V., Pakmor, R., Zier
 O., Reinecke, M., https://arxiv.org/abs/2010.03567) 
+Gadget_PostProc is used to study the distribution properties of matter in simulation snapshots containing 1 Milky Way-like galaxy model (consisting of stellar disc, 
+stellar bulge and dark matter halo) and additional satellite galaxy models made of stars and dark matter particles. 
 
-The code is in C++ and is composite of more source files. 
-This repository contains a Makefile.
-
-To create the executable, access the Makefile and make sure the required libraries and their paths are correctly linked. 
+The code is in C++ and is composite of more source files. Gadget_PostProc reads the HDF5 data from Gadget simulations 
+and finds the density centre of the system (following the method of Peter Berczik). By means of a rotation of the system, aligning it to the angular momentum of the 
+galactic disc, it then calculates tidal masses and radii of the satellites, the quantity of stripped matter from the satellites and other kinematic and positional properties
+of matter inside the simulation, including the second order momenta tensor for the geometry of the analysed components.
 
 Requirements:
 - HDF5 library
-- C++ standard
+- C++ compiler, standard C++11
+
+This repository contains a Makefile and a .sh file to set the HDF5 environmental variables used to compile the code.
+
+The code is done for being compiled and executed on Unix-based shells and terminals.
+
+To create the executable, on the terminal:
+
+1- run $./Gadget_PostProc_Makefile_Setup.sh, modifying inside it the path to the HDF5 modules. 
+2- run $make
+3- an execuable with a name corresponding to the one of the variable $EXEC will be created.
+4- run your executable as ./name_of_executable
+
+Snapshot files should be stored as "root_snapshot_"+NNN+".hdf5", with NNN the snapshot number in 3 digits, and with "root" the root of the snapshot filename.
+
+The code asks at the beginning some input parameters (filename "root", initial snapshot, final snapshot, snapshot step, number of satellites, concentration parameter 
+of the Milky Way model, x-y-z resolutions for 2D maps and softening/resolution for all particle types to determine the centre of maass).
+
+The code returns a "_postProc.hdf5" file, in HDF5 format, for each analysed snapshot, containing all the information about the reduced data.
+
+
+
+
