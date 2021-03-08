@@ -26,7 +26,7 @@ EXEC = GadgetPostProc.x
  
 PATH_FILE = $(EXEC)
 
-SOURCE += functions_utilities_Matteo.cpp Hdf5_particles_calculate_density.cpp functions_on_mass_distribution.cpp functions_make_arrays.cpp functions_Hdf5_writeHDF5.cpp functions_readHDF5.cpp readDensities.cpp Gadget_postProc_H5.cpp
+SOURCE += functions_utilities_Matteo.cpp Hdf5_particles_calculate_density.cpp functions_on_mass_distribution.cpp functions_make_arrays.cpp functions_Hdf5_writeHDF5.cpp functions_readHDF5.cpp readDensities.cpp Gadget_postProc.cpp
 
 OBJECTS = $(SOURCE:.cpp=.o)
 
