@@ -121,25 +121,16 @@ int main(int argc, char* argv[]){
 	
 			hp.myHDF5File = hp.myHDF5Root+"_snapshot_00"+fileNumber+".hdf5"; 
 			hp.myHDF5Post = hp.myHDF5Root+"_snapshot_00"+fileNumber+"_postProc.hdf5"; 
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_00"+fileNumber+"_postProc_no_sigma_with_cylinder.hdf5"; 
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_00"+fileNumber+"_postProc_no_sigma_with_cylinder_no_sigmaV.hdf5"; 
-			//hp.myHDF5Maps = hp.myHDF5Root+"_snapshot_00"+fileNumber+"_maps.hdf5"; 
 
 		}else if(iFile>=10 and iFile <100){
 
 			hp.myHDF5File = hp.myHDF5Root+"_snapshot_0"+fileNumber+".hdf5"; 
 			hp.myHDF5Post = hp.myHDF5Root+"_snapshot_0"+fileNumber+"_postProc.hdf5";
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_0"+fileNumber+"_postProc_no_sigma_with_cylinder.hdf5"; 
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_0"+fileNumber+"_postProc_no_sigma_with_cylinder_no_sigmaV.hdf5"; 
-			//hp.myHDF5Maps = hp.myHDF5Root+"_snapshot_0"+fileNumber+"_maps.hdf5"; 
 
 		}else{					
 
 			hp.myHDF5File = hp.myHDF5Root+"_snapshot_"+fileNumber+".hdf5"; 
 			hp.myHDF5Post = hp.myHDF5Root+"_snapshot_"+fileNumber+"_postProc.hdf5";
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_"+fileNumber+"_postProc_no_sigma_with_cylinder.hdf5"; 
-			//hp.myHDF5Post = hp.myHDF5Root+"_snapshot_"+fileNumber+"_postProc_no_sigma_with_cylinder_no_sigmaV.hdf5"; 
-			//hp.myHDF5Maps = hp.myHDF5Root+"_snapshot_"+fileNumber+"_maps.hdf5"; 
 
 		}
 
@@ -230,7 +221,7 @@ int main(int argc, char* argv[]){
 		//Calculate fraction of bound mass
 		bound_mass_calculate(&dcms_Sat, &pp4, &pp5, &hp);
 
-		std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << std::endl;
+		std::cout << "\n\n\n" << std::endl;
 
 		for(int i=0;i<hp.sat_numb;i++){
 
@@ -238,7 +229,7 @@ int main(int argc, char* argv[]){
 
 		}	
 
-		std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << std::endl;
+		std::cout << "\n\n\n" << std::endl;
 	
 		//Calculate MW mass within satellite distance to MW density center
 		integrate_MW_mass(&dcms, &dcms_Sat, &pp1, &pp2, &pp3, &hp);	
@@ -266,23 +257,6 @@ int main(int argc, char* argv[]){
 
 		//Correct for angular momentum inclination
 		angular_momentum_corrections(&dcms,&pp1,&pp2,&pp3,&pp4,&pp5,&hp);	
-
-		//Initalizing array file
-		//std::cout << "Creating array file " << hp.myHDF5File+"_maps.hdf5" << " and filling Header..." << std::endl;
-		//create_HDF5_arrays_file(&hp,&ap);
-
-		/*
-
-		//Now make arrays in space
-		make_xyz_arrays(&dcms,&pp1,&hp,&ap,1);
-		make_xyz_arrays(&dcms,&pp2,&hp,&ap,2);
-		make_xyz_arrays(&dcms,&pp3,&hp,&ap,3);
-		make_xyz_arrays(&dcms,&pp4,&hp,&ap,4);
-		if(hp.wantBaryons == 1){	
-			make_xyz_arrays(&dcms,&pp5,&hp,&ap,5);
-		}
-
-		*/
 
 		//Do flagging on energy-content-based membership of satellite particles
 		std::cout << "Flagging satellite particles for distribution analysis..." << std::endl;
