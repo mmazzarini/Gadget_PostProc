@@ -36,6 +36,13 @@ The code requires an Aquarius-simulations table containing information about the
 
 The code returns a "_postProc.hdf5" file, in HDF5 format, for each analysed snapshot, containing all the information about the reduced data.
 
+* * * * * * * * * * * * * * * * * * * * * * * * * *
+
+This code was used to perform the analysis of the satellite matter distribution described in M. Mazzarini's First Author publication:
+
+Mazzarini, M., Just, A., Macciò, A. V., and Moetazedian, R. 2020 A&A, 636, 106
+"Simulations of satellite tidal debris in the Milky Way halo"
+
 
 
 
