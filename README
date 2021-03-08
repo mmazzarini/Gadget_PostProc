@@ -32,16 +32,19 @@ The code asks at the beginning some input parameters (filename "root", initial s
 of the Milky Way model, x-y-z resolutions for 2D maps and softening/resolution for all particle types to determine the centre of maass).
 
 The code requires an Aquarius-simulations table containing information about the initial satellite tidal and scale radii and tidal masses of the satellites used in the simulation
-(for information about the table, see "Moetazedian R, and Just A. 2016, MNRAS, 459, 2905", and "Mazzarini M., Just A., Macciò A. V., Moetazedian R., 2020, A&A, 636, A106").
+(for information about the table, see Moetazedian R, and Just A. 2016, MNRAS, 459, 2905, https://academic.oup.com/mnras/article/459/3/2905/2595168, and 
+Mazzarini M., Just A., Macciò A. V., Moetazedian R., 2020, A&A, 636, A106).
 
 The code returns a "_postProc.hdf5" file, in HDF5 format, for each analysed snapshot, containing all the information about the reduced data.
+For information about the HDF5 data storage hierarchy adopted in the simulation snapshots of Gadget-4. See the references to Gadget-2 in the 
+above Paper from Springel et al. 2020
 
 * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 This code was used to perform the analysis of the satellite matter distribution described in M. Mazzarini's First Author publication:
 
 Mazzarini, M., Just, A., Macciò, A. V., and Moetazedian, R. 2020 A&A, 636, 106,
-"Simulations of satellite tidal debris in the Milky Way halo",
+"Simulations of satellite tidal debris in the Milky Way halo", https://www.aanda.org/articles/aa/abs/2020/04/aa37558-20/aa37558-20.html 
 
 as well as for M. Mazzarini's Doctoral Thesis (Univeristät Heidelberg, 2020):
 "A numerical investigation of the Milky Way and of the satellite tidal debris in the Galactic environment".
